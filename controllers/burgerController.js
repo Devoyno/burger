@@ -12,4 +12,18 @@ router.get('/', function(req, res) {
   })
 })
 
+router.put('/burgers/:id', function(req, res) {
+  burger.update(req.params.id, function(data) {
+    console.log(data);
+    res.sendStatus(200)
+  })
+})
+
+router.post('/burgers', function(req, res) {
+  burger.create(req.body, function(data) {
+    console.log(data);
+    res.redirect("/")
+  })
+})
+
 module.exports = router;
