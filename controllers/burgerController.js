@@ -20,7 +20,8 @@ router.put('/burgers/:id', function(req, res) {
 })
 
 router.post('/burgers', function(req, res) {
-  burger.create(req.body, function(data) {
+  console.log(req.body);
+  burger.create(req.body.burger_name, function(data) {
     console.log(data);
     res.redirect("/")
   })

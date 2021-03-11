@@ -12,11 +12,14 @@ $(document).ready(function() {
   });
   $("#add-burger").on("click", function() {
     var name = $("#burger-name").val();
+    var burger = {
+      burger_name: name
+    }
     console.log(name);
     $.ajax({
       method: "POST",
       url: "/burgers",
-      data: name
+      data: burger
     }).then(function(response) {
       console.log(response);
       location.reload();
