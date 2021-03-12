@@ -1,24 +1,32 @@
-<ul>
-  {{#each burgers}}
-  {{#unless devoured}}
-  <li>{{this.burger_name}}</li><button class="update-burger" value={{ this.id }}>Devour</button>
-  {{/unless}}
-  {{/each}}
-</ul>
+<div class="container burger-container">
+  <div class="row">
+    <div class="col-6 uneaten">
+      <ul>
+        {{#each burgers}}
+        {{#unless devoured}}
+        <li>{{this.burger_name}}<button class="btn btn-outline-dark update-burger" value={{ this.id }}>Devour</button></li>
+        {{/unless}}
+        {{/each}}
+      </ul>
+    </div>
 
-<ul>
-  {{#each burgers}}
-  {{#if devoured}}
-  <li>{{this.burger_name}}</li>
-  {{/if}}
-  {{/each}}
-</ul>
-
-<div class="enter-burger">
-		<div class="input-group mb-3">
-  <input type="text" class="form-control" id="burger-name" placeholder="Enter your Burger">
-  <div class="input-group-append">
-    <button class="btn btn-dark" id="add-burger" type="button">Add Burger</button>
+    <div class="col-6">
+      <ul>
+        {{#each burgers}}
+        {{#if devoured}}
+        <li>{{this.burger_name}}</li>
+        {{/if}}
+        {{/each}}
+      </ul>
+    </div>
   </div>
 </div>
+
+<div class="enter-burger">
+  <div class="input-group mb-3">
+    <input type="text" class="form-control" id="burger-name" placeholder="Enter your Burger">
+    <div class="input-group-append">
+      <button class="btn btn-dark" id="add-burger" type="button">Add Burger</button>
+    </div>
+  </div>
 </div>
